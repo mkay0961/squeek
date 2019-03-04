@@ -1,5 +1,20 @@
 class ItemSerializer < ActiveModel::Serializer
-  attributes :name, :price, :review
-  has_many :users
+  attributes :id,:name, :price, :user
+  def user
+    rtn = []
+    self.object.users.each do |user|
+      hash = {}
+      hash["id"] = user.id
+      hash["first"] = user.first
+      hash["last"] = user.last
+      rev = user.user_items.select do |review|
+        review.item_id == self.object.id
+      end
+      hash["review"] = rev.map{|el| el.review}.join(" ")
+
+      rtn.push(hash)
+    end
+    return rtn
+  end
 
 end

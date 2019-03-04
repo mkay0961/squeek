@@ -5,9 +5,10 @@ class ItemsController < ApplicationController
   end
 
   def create
-    i = Item.create(item_params)
+    byebug
+    i = Item.find_or_create_by(item_params)
     u = User.find(params[:user_id])
-    UserItem.create(user: u, item: i)
+    UserItem.find_or_create_by(user: u, item: i)
     render json: i
   end
 

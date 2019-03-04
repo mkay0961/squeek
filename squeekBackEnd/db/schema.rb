@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2019_03_04_150001) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.float "price"
-    t.string "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_150001) do
   create_table "user_items", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "item_id"
+    t.string "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_user_items_on_item_id"
