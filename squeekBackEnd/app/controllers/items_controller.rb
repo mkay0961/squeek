@@ -16,7 +16,11 @@ class ItemsController < ApplicationController
   end
 
   def update
-    byebug
+    i = Item.find(params[:id])
+    u = User.find(params[:user_id])
+    review = UserItem.find_by(user: u, item: i)
+    review.update(user_item_params)
+    render json: i
   end
 
   def destroy
@@ -28,6 +32,10 @@ class ItemsController < ApplicationController
  private
  def item_params
    params.require(:item).permit(:name, :price)
+ end
+
+ def user_item_params
+   params.permit(:current, :review)
  end
 
 end

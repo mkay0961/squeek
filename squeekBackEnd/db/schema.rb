@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_150001) do
     t.bigint "user_id"
     t.bigint "item_id"
     t.string "review"
+    t.boolean "current", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_user_items_on_item_id"
