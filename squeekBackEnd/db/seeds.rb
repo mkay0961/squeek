@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+Item.destroy_all
+UserItem.destroy_all
+
+m = User.create(first: "Matthew", last:"Kay")
+
+i = Item.create(name: "Dove Deodorant", price: "5.00", review: "very good")
+
+UserItem.create(user:m,item:i)
