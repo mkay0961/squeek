@@ -4,6 +4,11 @@ class UsersController < ApplicationController
     render json: User.all
   end
 
+  def loginPage
+    u = User.find_by(username: params[:username])
+    render json: u.id
+  end
+
   def show
     render json: User.find(params[:id])
   end
@@ -12,7 +17,6 @@ class UsersController < ApplicationController
     u = User.new(user_params)
     u.username
     u.save
-    byebug 
     render json: u
   end
 
