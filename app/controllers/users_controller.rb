@@ -3,13 +3,17 @@ class UsersController < ApplicationController
   def index
     render json: User.all
   end
-  
+
   def show
     render json: User.find(params[:id])
   end
 
   def create
-    render json:User.create(user_params)
+    u = User.new(user_params)
+    u.username
+    u.save
+    byebug 
+    render json: u
   end
 
   def destroy

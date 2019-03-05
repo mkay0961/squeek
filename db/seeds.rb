@@ -10,8 +10,8 @@ User.destroy_all
 Item.destroy_all
 UserItem.destroy_all
 
-m = User.create(first: "Matthew", last:"Kay")
-h = User.create(first: "Heloise", last:"Taillet")
+m = User.create(first: "Matthew", last:"Kay",username: "matthew_kay")
+h = User.create(first: "Heloise", last:"Taillet", username: "heloise_taillet")
 
 i = Item.create(name: "Dove Deodorant", price: "5.00")
 i1 = Item.create(name: "Dove shampoo", price: "5.39")
