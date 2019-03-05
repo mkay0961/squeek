@@ -11,12 +11,17 @@ class Controller{
   }
 
   handleArray(array){
-    this.getUserDiv().innerText = ""
+    this.getBody().innerText = ""
     array.forEach(this.renderUser.bind(this))
   }
 
-  getUserDiv(){
-    return document.getElementById("users-container")
+  createUserDiv(){
+    let div = document.createElement("div")
+    div.className = "users-container"
+    return div
+  }
+  getBody(){
+    return document.getElementById('whole-body')
   }
 
   renderUser(user){
@@ -29,19 +34,23 @@ class Controller{
     h1.innerText = user.first + " " + user.last
     divCardFrame.appendChild(h1)
     divCard.appendChild(divCardFrame)
-    this.getUserDiv().appendChild(divCard)
+    let div = this.createUserDiv()
+    div.appendChild(divCard)
+    this.getBody().appendChild(div)
   }
 
   specficUser(user){
-    this.getUserDiv().innerText = ""
+    this.getBody().innerText = ""
     let h1 = document.createElement("h1")
     h1.innerText = user.first + " " + user.last
 
     let btn = document.createElement("button")
     btn.innerText = "Home"
     btn.addEventListener('click',()=>{this.start()})
-    this.getUserDiv().appendChild(h1)
-    this.getUserDiv().appendChild(btn)
+    let div = this.createUserDiv()
+    div.appendChild(h1)
+    div.appendChild(btn)
+    this.getBody().appendChild(div)
 
     console.log("hi");
   }
