@@ -16,11 +16,22 @@ class ItemsController < ApplicationController
   end
 
   def update
-    i = Item.find(params[:id])
-    u = User.find(params[:user_id])
-    review = UserItem.find_by(user: u, item: i)
-    review.update(user_item_params)
-    render json: i
+    if(!params["keywords"].nil?)
+      item = Item.find(params[:id])
+      if(item.keywords.nil? == true)
+        newKeywords = params["keywords"]
+      else
+        newKeywords = item.keywords +" "+ params["keywords"]
+      end
+      item.update(keywords: newKeywords)
+    else
+      item = Item.find(params[:id])
+      u = User.find(params[:user_id])
+      review = UserItem.find_by(user: u, item: item)
+      review.update(user_item_params)
+
+   end
+   render json: item
   end
 
   def destroy

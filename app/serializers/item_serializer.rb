@@ -1,5 +1,5 @@
 class ItemSerializer < ActiveModel::Serializer
-  attributes :id,:name, :price, :user
+  attributes :id,:name, :price,:keywords, :user
   def user
     rtn = []
     self.object.users.each do |user|
@@ -12,6 +12,7 @@ class ItemSerializer < ActiveModel::Serializer
       end
       hash["review"] = rev.map{|el| el.review}.join(" ")
       hash["current"] = rev.map{|el| el.current}.join(" ")
+      # hash["keywords"] = rev.map{|el| el.keywords}.join(" ")
       rtn.push(hash)
     end
     return rtn

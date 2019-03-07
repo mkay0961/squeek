@@ -3,6 +3,6 @@ Rails.application.routes.draw do
     resources :items, only: [:destroy, :update]
   end
   post 'users/userLogin/:username', to: "users#loginPage"
-  resources :items, only: [:index, :show, :create]
+  resources :items, only: [:index, :show, :create, :update]
 
 end
