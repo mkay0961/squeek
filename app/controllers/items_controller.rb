@@ -29,7 +29,6 @@ class ItemsController < ApplicationController
       u = User.find(params[:user_id])
       review = UserItem.find_by(user: u, item: item)
       review.update(user_item_params)
-
    end
    render json: item
   end
