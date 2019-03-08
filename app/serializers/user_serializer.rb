@@ -18,7 +18,4 @@ class UserSerializer < ActiveModel::Serializer
     end
     return rtn
   end
-  # has_many :items
-  # has_many :user_items, through: :items
-
 end
