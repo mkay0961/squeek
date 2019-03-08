@@ -1,5 +1,5 @@
 class ItemSerializer < ActiveModel::Serializer
-  attributes :id,:name, :price,:keywords, :user
+  attributes :id,:name, :price,:keywords,:image, :user
   def user
     rtn = []
     self.object.users.each do |user|

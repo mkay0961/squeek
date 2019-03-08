@@ -8,6 +8,7 @@ class UserSerializer < ActiveModel::Serializer
       hash["item_id"] = item.id
       hash["name"] = item.name
       hash["price"] = item.price
+      hash["image"] = item.image
       rev = item.user_items.select do |review|
         review.user_id == self.object.id
       end

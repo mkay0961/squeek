@@ -24,7 +24,7 @@ serven = User.create(first: "Serven", last:"Maraghi", username: "serven_maraghi"
 a = User.create(first: "Anthony", last:"Gregg", username: "anthony_gregg")
 sharon = User.create(first: "Sharon", last:"Naborf", username: "sharon_naborf")
 
-i1 = Item.create(name: "Cetaphil Gentle Skin Cleanser", price: "9.52", keywords: "normalskin combo acne oilyskin", image: 'https://ship.kroger.com/img/Products/500/Cetaphil/Cetaphil-Gentle-Skin-Cleanser-302993921080.jpg')
+i1 = Item.create(name: "Cetaphil Gentle Skin Cleanser", price: "9.52", keywords: "normalskin combo acne oilyskin", image: "https://ship.kroger.com/img/Products/500/Cetaphil/Cetaphil-Gentle-Skin-Cleanser-302993921080.jpg")
 i2 = Item.create(name: "Dove Cucumber Body Wash", price: "8.99", keywords: "normalskin", image:  'https://i5.walmartimages.com/asr/b82d3127-642a-4837-9a16-2f228630b0da_1.9786ba16e490da0b8862964dd81f42b6.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff')
 i3 = Item.create(name: "Nexxus Volumizing Shampoo", price: "11.99", keywords: "dryhair flat", image: 'https://images-na.ssl-images-amazon.com/images/I/71A2MHgKXqL._SY355_.jpg')
 i4 = Item.create(name: "Nexxus Volumizing Condition", price: "11.99", keywords: "dryhair flat", image: 'https://images-na.ssl-images-amazon.com/images/I/71A2MHgKXqL._SY355_.jpg')
