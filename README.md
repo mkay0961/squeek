@@ -1,24 +1,14 @@
-# README
+    
+This app is designed to help keep track of your hygiene products and find new ones based on specific body features
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This backend is built in Ruby and Ruby on Rails.
 
-Things you may want to cover:
+This backend API has full CRUD on a users hygiene products
 
-* Ruby version
+The frontend can be found at https://github.com/mkay0961/Front-end-squeek
 
-* System dependencies
+To download, clone this repository and the frontend repository.
 
-* Configuration
+Run the command bundle install, then Rails s
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If you would like to contribute feel free to email me at Mkay0961@gmail.com
